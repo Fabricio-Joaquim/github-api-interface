@@ -23,17 +23,19 @@ const Profile = () => {
           </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
             <h3>Company:</h3>
-            <span>{githubState.user.company}</span>
+            <span>{githubState.user.company || "Não informado"}</span>
           </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
             <h3>Location:</h3>
-            <span>{githubState.user.location}</span>
+            <span>{githubState.user.location || "Não informado"}</span>
           </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
             <h3>Blog:</h3>
-            <a href={githubState.user.blog} target="_blank" rel="noreferrer">
+            {githubState.user.blog ? <a href={githubState.user.blog} target="_blank" rel="noreferrer">
               {githubState.user.blog}
-            </a>
+            </a> :
+              <p>Não informado</p>
+            }
           </S.WrapperUserGeneric>
         </div>
         <S.WrapperStatusCount>
